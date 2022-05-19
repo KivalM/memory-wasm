@@ -1,0 +1,51 @@
+[package]
+name = "wasm-memtest"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[package.metadata.wasm-pack.profile.dev]
+wasm-opt = false
+
+[package.metadata.wasm-pack.profile.profiling]
+wasm-opt = false
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[dependencies]
+wasm-bindgen = "0.2.74"
+wee_alloc = "0.4.5"
+console_error_panic_hook = "0.1.7"
+wasm-bindgen-futures = "0.4.30"
+wasm-streams = "0.2.2"
+futures = "^0.3.12"
+js-sys = "0.3.57"
+
+
+[dependencies.web-sys]
+version = "0.3.56"
+features = [
+  'console',
+  'ErrorEvent',
+  'HtmlInputElement',
+    "AbortSignal",
+    "Response",
+    "ReadableStream",
+    "Window",
+  'File',
+  'Document',
+  'Navigator',
+  'Window',
+  'Worker',
+  'WorkerOptions',
+  'WorkerGlobalScope',
+  'WorkerType',
+  'DedicatedWorkerGlobalScope',
+  'MessageEvent',
+  'Blob',
+]
